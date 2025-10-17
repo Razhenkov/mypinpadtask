@@ -27,18 +27,33 @@
     ```
   
 ![alt text](readme-files/AppSettings.png)
+<br />
 
 2. Open **MyPinPad.sln** with Visual Studio (2022)
-3. There are two projects that will be run - **MyPinPan.WebApi** (.NET 8 Web API) and **MyPinPad.UI** (Blazor Web App)
+<br />
+
+3. This solution contains **two projects** that need to be run together (Right-click the solution → Set Startup Projects → choose Multiple startup projects.): 
+    - **MyPinPan.WebApi** (.NET 8 Web API)
+    - **MyPinPad.UI** (Blazor Web App) <br/><br/>
+
+![alt text](readme-files/getting_started.png)
+<br />
+
+
 4. Once **MyPinPan.WebApi** is run, Swagger page is open in the browser, showing the API definitions.
 ![alt text](readme-files/process_endpoint.png)
+<br />
+
 5. All created transactions can be viewed using **MyPinPan.UI**
 ![alt text](readme-files/tnxs_list.png)
+<br />
+
 6. Transaction Details
 ![alt text](readme-files/tnx_details.png)
 
-## 🌐 MyPinPad.WebApi
+<br/>
 
+## 🌐 MyPinPad.WebApi
 
 ### Create a transaction
 In order to create a transaction you must send a POST request with **emvHex** in the body payload and integrity code into the headers using **X-Integrity-Signature**
