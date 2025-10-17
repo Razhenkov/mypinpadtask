@@ -1,0 +1,57 @@
+﻿@page "/transactions"
+@using MyPinPad.UI.Models
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Transactions</PageTitle>
+
+<h1>Transactions</h1>
+
+@if (_transactions == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Id</th>
+                <th>Processed At</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaction in _transactions!)
+            {
+                <tr>
+                    <td>
+                        <NavLink class="btn btn-primary" href="@($"/transactions/{transaction.Id}")">
+                            View Details
+                        </NavLink>
+                    </td>
+                    <td>@transaction.Id</td>
+                    <td>@transaction.ProcessedAt.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                    <td>@transaction.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private TransactionListItem[]? _transactions;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var client = HttpClientFactory.CreateClient("TransactionAPI");
+
+        _transactions = await client.GetFromJsonAsync<TransactionListItem[]>("transactions");
+    }
+
+    private void GoToDetails(Guid id)
+    {
+        NavigationManager.NavigateTo($"/transactions/{id}");
+    }
+}

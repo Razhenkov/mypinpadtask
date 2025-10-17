@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{55E0F940-BD36-4611-86C6-1A6991A22491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPinPad.UI", "src\MyPinPad.UI\MyPinPad.UI.csproj", "{5D998B83-44EF-4AD6-8197-CBEEF115609A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPinPad.WebApi", "src\MyPinPad.WebApi\MyPinPad.WebApi.csproj", "{1CB91A29-59A0-460E-85C8-FF8C2CB625B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPinPad.Core", "src\MyPinPad.Core\MyPinPad.Core.csproj", "{42F62B8C-021B-486C-9F57-FA2EA4145C84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPinPad.UnitTests", "tests\MyPinPad.UnitTests\MyPinPad.UnitTests.csproj", "{A5EAD9A4-B639-4700-BCDC-29EC1F4BA890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPinPad.FunctionalTests", "tests\MyPinPad.FunctionalTests\MyPinPad.FunctionalTests.csproj", "{16CBF5A1-06CA-4547-A62A-EEFA41705125}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{598AC7E7-27C5-4486-889C-E8FD3A13D609}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D998B83-44EF-4AD6-8197-CBEEF115609A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D998B83-44EF-4AD6-8197-CBEEF115609A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D998B83-44EF-4AD6-8197-CBEEF115609A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D998B83-44EF-4AD6-8197-CBEEF115609A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB91A29-59A0-460E-85C8-FF8C2CB625B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB91A29-59A0-460E-85C8-FF8C2CB625B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB91A29-59A0-460E-85C8-FF8C2CB625B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB91A29-59A0-460E-85C8-FF8C2CB625B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42F62B8C-021B-486C-9F57-FA2EA4145C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42F62B8C-021B-486C-9F57-FA2EA4145C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42F62B8C-021B-486C-9F57-FA2EA4145C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42F62B8C-021B-486C-9F57-FA2EA4145C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5EAD9A4-B639-4700-BCDC-29EC1F4BA890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5EAD9A4-B639-4700-BCDC-29EC1F4BA890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5EAD9A4-B639-4700-BCDC-29EC1F4BA890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5EAD9A4-B639-4700-BCDC-29EC1F4BA890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16CBF5A1-06CA-4547-A62A-EEFA41705125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16CBF5A1-06CA-4547-A62A-EEFA41705125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16CBF5A1-06CA-4547-A62A-EEFA41705125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16CBF5A1-06CA-4547-A62A-EEFA41705125}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D998B83-44EF-4AD6-8197-CBEEF115609A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1CB91A29-59A0-460E-85C8-FF8C2CB625B9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{42F62B8C-021B-486C-9F57-FA2EA4145C84} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A5EAD9A4-B639-4700-BCDC-29EC1F4BA890} = {55E0F940-BD36-4611-86C6-1A6991A22491}
+		{16CBF5A1-06CA-4547-A62A-EEFA41705125} = {55E0F940-BD36-4611-86C6-1A6991A22491}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69A2DE7F-FE85-4C5E-9523-720FF58D2454}
+	EndGlobalSection
+EndGlobal

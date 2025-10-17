@@ -1,0 +1,6 @@
+@MyPinPad.WebApi_HostAddress = http://localhost:5212
+
+GET {{MyPinPad.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,97 @@
+﻿@page "/transactions/{id:guid}"
+@using MyPinPad.UI.Models
+@attribute [StreamRendering]
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Transactions</PageTitle>
+
+<h1>Transaction Details</h1>
+
+@if (_notFound)
+{
+    <p><em>Transaction could not be found</em></p>
+}
+
+@if (_transaction == null)
+{
+    @if (!_notFound)
+    {
+        <p><em>Loading...</em></p>
+    }
+}
+else
+{
+    <table class="table">
+        <tbody>
+            <tr>
+                <td class="head">Id:</td><td>@_transaction!.Id</td>
+            </tr>
+            <tr>
+                <td class="head">Processed At: </td><td>@_transaction!.ProcessedAt.ToString("dd/MM/yyyy HH:mm:ss")</td>
+            </tr>
+            <tr>
+                <td class="head">Status:</td>
+                <td>
+                    @if (_transaction!.Status == "Approved")
+                    {
+                        <label class="badge bg-success">@_transaction!.Status</label>
+                    }
+                    else
+                    {
+                        <label class="badge bg-danger">@_transaction!.Status</label>
+                    }
+                </td>
+
+            </tr>
+            <tr>
+                <td class="head">TLV Tags:</td>
+                <td>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="30%">Name</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var tag in _transaction!.TlvTags)
+                            {
+                                <tr>
+                                    <td><label style="background: #aaa; color: #fff; border: solid 1px #888; padding: 0 3px;">@tag.Key</label></td>
+                                    <td>@tag.Value</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter] public Guid Id { get; set; }
+
+    private Transaction? _transaction;
+    private bool _notFound = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var client = HttpClientFactory.CreateClient("TransactionAPI");
+            _transaction = await client.GetFromJsonAsync<Transaction>($"transactions/{Id}");
+        }
+        catch (HttpRequestException e)
+        {
+            _notFound = true;
+        }
+    }
+}
+
+<style>
+    td.head {
+        font-weight: bold;
+    }
+</style>

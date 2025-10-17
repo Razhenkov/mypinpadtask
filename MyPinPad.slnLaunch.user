@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "src\\MyPinPad.WebApi\\MyPinPad.WebApi.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MyPinPad.UI\\MyPinPad.UI.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

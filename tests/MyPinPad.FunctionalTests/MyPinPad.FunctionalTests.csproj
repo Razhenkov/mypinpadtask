@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="FluentAssertions" Version="8.7.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.5.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
+  </ItemGroup>
+
+	<!-- Reference the Web API project -->
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\MyPinPad.WebApi\MyPinPad.WebApi.csproj" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+	<!-- Copy the Web API deps.json file into the test output -->
+	<Target Name="CopyDepsFile" AfterTargets="Build">
+		<ItemGroup>
+			<DepsFile Include="..\..\src\MyPinPad.WebApi\bin\Debug\net8.0\MyPinPad.WebApi.deps.json" />
+		</ItemGroup>
+		<Copy SourceFiles="@(DepsFile)" DestinationFiles="$(OutDir)testhost.deps.json" />
+	</Target>
+
+	<!-- Disable xUnit shadow copying -->
+	<ItemGroup>
+		<None Update="xunit.runner.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	
+</Project>
