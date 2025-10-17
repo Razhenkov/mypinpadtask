@@ -1,8 +1,10 @@
 # Mypinpad Exercise Task
 
 - [How to run locally](#how-to-run-locally)
-- [List Transactions](#list-transactions)
-- [Retrieve a transaction by ID](#retrieve-a-transaction-by-id)
+- [MyPinPad.WebApi](#-mypinpadwebapi)
+  - [Process Transaction](#process-a-transaction)
+  - [List Transactions](#list-transactions)
+  - [Retrieve a transaction by ID](#retrieve-a-transaction-by-id)
 - [Architecture - system design and decisions](#architecture---system-design-and-decisions)
   - [Integrity protection](#integrity-protection)
   - [Persistance and protection of sensitive data](#persistance-and-protection-of-sensitive-data)
@@ -33,18 +35,18 @@
 <br />
 
 3. This solution contains **two projects** that need to be run together (Right-click the solution → Set Startup Projects → choose Multiple startup projects.): 
-    - **MyPinPan.WebApi** (.NET 8 Web API)
+    - **MyPinPad.WebApi** (.NET 8 Web API)
     - **MyPinPad.UI** (Blazor Web App) <br/><br/>
 
 ![alt text](readme-files/getting_started.png)
 <br />
 
 
-4. Once **MyPinPan.WebApi** is run, Swagger page is open in the browser, showing the API definitions.
+4. Once **MyPinPad.WebApi** is run, Swagger page is open in the browser, showing the API definitions.
 ![alt text](readme-files/process_endpoint.png)
 <br />
 
-5. All created transactions can be viewed using **MyPinPan.UI**
+5. All created transactions can be viewed using **MyPinPad.UI**
 ![alt text](readme-files/tnxs_list.png)
 <br />
 
@@ -55,7 +57,7 @@
 
 ## 🌐 MyPinPad.WebApi
 
-### Create a transaction
+### Process a transaction
 In order to create a transaction you must send a POST request with **emvHex** in the body payload and integrity code into the headers using **X-Integrity-Signature**
 
 **Request:**
